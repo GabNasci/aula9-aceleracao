@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nome: <strong id="nome"></strong></p>
+    <p>E-mail: <strong id="email"></strong></p>
+    <p>Aceitou? <strong id="select"></strong></p>
+
+
+    <script>
+        const params = new URLSearchParams(window.location.search)
+        const nome = params.get('nome')
+        const email = params.get('email')
+        const select = params.get('select')
+
+        const mostraNome = document.getElementById('nome')
+        const mostraEmail = document.getElementById('email')
+        const mostraSelect = document.getElementById('select')
+        
+        mostraNome.textContent = nome
+        mostraEmail.textContent = email
+        mostraSelect.textContent = select == 'on' ? 'Sim': 'Não'
+
+    </script>
+</body>
+</html>
